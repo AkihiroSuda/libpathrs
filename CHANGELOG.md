@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Due to some unfortunate type usage in `libc` and `rustix`, libpathrs would
   previously fail to build on s390x with musl. We've worked around that issue
   by casting all `f_type` values to `u64` (though [we believe it to be an
-  upstream issue][rustix-issue1694]). (#425, #426)
+  upstream issue][rustix-issue1694]). Previously our CI mostly focused on tier
+  1 and 2 targets (which include some musl targets), but we now compile-test
+  the equivalent tier 3 targets for most relevant architectures. (#425, #426)
 
 [rustix-issue1694]: https://github.com/bytecodealliance/rustix/issues/1694
 
